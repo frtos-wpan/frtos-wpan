@@ -1,12 +1,27 @@
 @@@ WIP. branch names will change.
 
+See README.md for a brief project overview.
+
+License
+-------
+
+Unless stated otherwise, all code in this project is developed by 
+Werner Almesberger for Actility S.A., and licensed under LGPLv2 by 
+Actility S.A.
+
 System setup
 ------------
+
+Package names are for Ubuntu 13.04.
 
 git-svn is used to track the FreeRTOS upstream (only needed if
 maintaining the SVN-to-git tracking repository):
 
 # apt-get install git-svn
+
+The cross-compilation toolchain:
+
+# apt-get install gcc-arm-linux-gnueabi
 
 We use dfu-util to load new firmware into the evaluation boards:
 
