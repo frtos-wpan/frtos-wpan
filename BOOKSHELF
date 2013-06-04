@@ -1,0 +1,53 @@
+#
+# Tags:
+#
+# N     name to use for dsv (must be first)
+# A     alias name(s)
+# D     data sheet url
+#
+
+N: stm32f200
+A: f200
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/reference_manual/CD00225773.pdf
+
+N: STM32F207ZET6
+A: m3
+D: http://www.st.com/web/en/resource/technical/document/datasheet/CD00237391.pdf
+
+N: STM32F407ZGT6
+A: m4
+D: http://www.st.com/web/en/resource/technical/document/datasheet/DM00037051.pdf
+
+N: stm32f3xxerr
+A: m3err
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/errata_sheet/DM00027213.pdf
+
+N: stm32f4xxerr
+A: m4err
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/errata_sheet/DM00037591.pdf
+
+N: stm32m3pgm
+A: m3p
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/programming_manual/CD00228163.pdf
+
+N: stm32m4pgm
+A: m4p
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/programming_manual/DM00046982.pdf
+
+N: stm32m3flash
+A: m3flash
+D: http://www.st.com/web/en/resource/technical/document/programming_manual/CD00233952.pdf
+
+N: stm32m4flash
+A: m4flash
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/programming_manual/DM00046982.pdf
+
+N: STM32-H407
+D: https://www.olimex.com/Products/ARM/ST/STM32-H407/resources/STM32-H407.pdf
+
+N: STM32-E407
+A: eval
+D: https://www.olimex.com/Products/ARM/ST/STM32-E407/resources/STM32-E407.pdf
+
+N: STM32F4DISCOVERY
+D: http://www.st.com/web/en/resource/technical/document/data_brief/DM00037955.pdf

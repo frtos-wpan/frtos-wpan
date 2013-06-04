@@ -1,0 +1,69 @@
+@@@ WIP. branch names will change.
+
+System setup
+------------
+
+git-svn is used to track the FreeRTOS upstream (only needed if
+maintaining the SVN-to-git tracking repository):
+
+# apt-get install git-svn
+
+We use dfu-util to load new firmware into the evaluation boards:
+
+# apt-get install dfu-util
+
+
+Setting up a FreeRTOS SVN-to-git repository
+-------------------------------------------
+
+Note: skip the "git clone ...freertos.git" step in the next section
+if you do this.
+
+@@@ verify this sequence
+
+% mkdir freertos
+% cd freertos
+% git init
+% git svn fetch
+% git checkout -b master
+% git merge --ff-only trunk
+% git remote add origin git@github.com:frtos-wpan/freertos.git
+#% git push -u origin master
+% git config push.default matching
+% git push --mirror
+
+
+Setting up the repositories
+---------------------------
+
+% git clone git@github.com:frtos-wpan/frtos-wpan.git 
+% git clone git@github.com:frtos-wpan/contiki.git
+% git clone git@github.com:frtos-wpan/freertos.git
+
+% cd frtos-wpan
+% make
+
+
+Updating the repositories
+-------------------------
+
+frtos-wpan:
+
+% cd frtos-wpan
+% git pull
+
+Contiki:
+
+% cd contiki
+% git pull
+
+FreeRTOS (from git):
+
+% cd freertos
+% git pull
+
+FreeRTOS (from SVN):
+
+% cd freertos
+% git svn fetch
+% git merge --ff-only trunk
