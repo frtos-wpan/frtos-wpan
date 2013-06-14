@@ -65,3 +65,8 @@ N: AN3364
 A: STM32-Compatibility
 A: stm32comp
 D: http://www.st.com/st-web-ui/static/active/cn/resource/technical/document/application_note/DM00024853.pdf
+
+N: AN3422
+A: STM32F1-L1-Migration
+A: f1l1mig
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/DM00032987.pdf
