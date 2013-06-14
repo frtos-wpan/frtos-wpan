@@ -55,3 +55,13 @@ D: https://www.olimex.com/Products/ARM/ST/STM32-E407/resources/STM32-E407.pdf
 
 N: STM32F4DISCOVERY
 D: http://www.st.com/web/en/resource/technical/document/data_brief/DM00037955.pdf
+
+N: AN3427
+A: STM32F1-F2-Migration
+A: f1f2mig
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/DM00033267.pdf
+
+N: AN3364
+A: STM32-Compatibility
+A: stm32comp
+D: http://www.st.com/st-web-ui/static/active/cn/resource/technical/document/application_note/DM00024853.pdf
