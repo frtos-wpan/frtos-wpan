@@ -29,6 +29,10 @@ We use dfu-util to load new firmware into the evaluation boards:
 
 # apt-get install dfu-util
 
+Other tools we need (some may already be installed):
+
+# apt-get install git make unzip wget
+
 
 Setting up a FreeRTOS SVN-to-git repository
 -------------------------------------------
@@ -116,3 +120,26 @@ Setting up the Olimex STM32-E407 board
 
 - plug mini-USB into USB-OTG1, next to the Ethernet connector. The
   board should now enumerate as 0483:df11.
+
+
+The FreeRTOS demo
+-----------------
+
+The demo runs on the Olimex STM32-E407. It
+
+- blinks the LED, and
+
+- prints "hello <number>" on UART6.TX at 19200 bps, where <number> is
+  a sequence number. UART6 is available on the UEXT connector.
+
+  A simple serial console utility can be found here:
+  http://projects.qi-hardware.com/index.php/p/wernermisc/source/tree/master/neocon
+
+% cd FreeRTOS/Demo/E407
+% make
+<bridge B0_1 and reset>
+% make dfu
+<move jumper back to B0_0 and reset again>
+
+Note that the first "make" will download the ST "demonstration builder
+platform" and therefore needs Internet access.
