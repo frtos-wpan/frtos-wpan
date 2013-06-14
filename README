@@ -11,6 +11,7 @@ Unless stated otherwise, all code in this project is developed by
 Werner Almesberger for Actility S.A., and licensed under LGPLv2 by 
 Actility S.A.
 
+
 System setup
 ------------
 
@@ -100,6 +101,34 @@ FreeRTOS (from SVN):
 % cd freertos
 % git svn fetch
 % git merge --ff-only trunk
+
+
+Caching the data sheets
+-----------------------
+
+Install "dsv" from
+http://projects.qi-hardware.com/index.php/p/eda-tools/source/tree/master/dsv
+for example,
+
+% git clone git@projects.qi-hardware.com:eda-tools.git
+% cp eda-tools/dsv/dsv /usr/local/bin
+
+Download and cache the data sheets:
+
+% cd frtos-wpan
+% make
+
+After that, you can access data sheets releveant to the project by going
+to any directory under frtos-wpan and invoking "dsv NAME" there. Just
+"dsv" lists the available names. The most important ones:
+
+  eval	documentation of the Olimex STM32-E407 data sheet
+  f400	STM32F4xx reference manual
+  m4	STM32F4xx data sheet
+  m4p	Cortex M4 programming manual
+
+@@@ some of the abbreviations are not very good and may change in the
+future.
 
 
 Setting up the Olimex STM32-E407 board
