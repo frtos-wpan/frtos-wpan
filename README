@@ -1,5 +1,7 @@
 @@@ WIP. branch names will change.
 
+@@@ WIP. the github setup is a bit awkward. may change in the future.
+
 See README.md for a brief project overview.
 
 License
@@ -58,6 +60,9 @@ Setting up the repositories
 % cd frtos-wpan
 % make
 
+% cd ../contiki
+% git remote add upstream https://github.com/contiki-os/contiki.git
+
 
 Updating the repositories
 -------------------------
@@ -67,10 +72,19 @@ frtos-wpan:
 % cd frtos-wpan
 % git pull
 
-Contiki:
+Contiki (frtos-wpan fork):
 
 % cd contiki
 % git pull
+
+Contiki (upstream):
+
+% cd contiki
+% git fetch upstream
+% git checkout master
+% git merge upstream/master
+% git checkout frtos
+% git merge master
 
 FreeRTOS (from git):
 
@@ -82,3 +96,23 @@ FreeRTOS (from SVN):
 % cd freertos
 % git svn fetch
 % git merge --ff-only trunk
+
+
+Setting up the Olimex STM32-E407 board
+--------------------------------------
+
+- install feet and headers at will (the feet don't enter easily. Twisting
+  them helps. The material seems strong enough that twisting doesn't
+  shear off the nipples. Once inserted, let the rubber relax for a moment,
+  then push it in some more.)
+
+- receive power from USB-OTG1:
+  move the PWR_SEL jumper (close to the DC connectors) from position
+  1-2 (near the battery connector) to position 7-8 (in the large
+  capacitors)
+
+- to boot into DFU mode, move the jumper on B0_0 (near the UEXT connector)
+  to position B0_1
+
+- plug mini-USB into USB-OTG1, next to the Ethernet connector. The
+  board should now enumerate as 0483:df11.
