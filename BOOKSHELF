@@ -10,6 +10,10 @@ N: stm32f200
 A: f200
 D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/reference_manual/CD00225773.pdf
 
+N: stm32f400
+A: f400
+D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/reference_manual/DM00031020.pdf
+
 N: STM32F207ZET6
 A: m3
 D: http://www.st.com/web/en/resource/technical/document/datasheet/CD00237391.pdf
