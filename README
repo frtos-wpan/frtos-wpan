@@ -76,14 +76,18 @@ arm-none-eabi toolchain
 % make install
 % cd ..
 
-% wget 
 % cd newlib-2.0.0
 % mkdir obj
 % cd obj
-% ../configure --target=arm-none-eabi --enable-interwork --enable-multilib
+% ../configure --target=arm-none-eabi --enable-interwork --enable-multilib \
+  --disable-newlib-supplied-syscalls
 % make -j5
 % make install
 % cd ../..
+
+Note: some configuration changes (e.g., --disable-...-syscalls) to newlib
+require removal of /usr/local/arm-none-eabi/ and a full reinstallation of
+the toolchain.
 
 
 Setting up a FreeRTOS SVN-to-git repository
