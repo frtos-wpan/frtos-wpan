@@ -1,0 +1,63 @@
+In case we need to build the toolchain manually, this would be the process.
+
+NOTE: we don't need to do this. We can use the ARM toolchain on Launchpad
+instead. See README for details.
+
+NOTE: this list of instructions isn't being maintained and may be/become
+obsolete.
+
+arm-none-eabi toolchain
+-----------------------
+
+# apt-get remove binutils-arm-linux-gnueabi cpp-4.7-arm-linux-gnueabi
+# apt-get remove cpp-arm-linux-gnueabi gcc-4.7-arm-linux-gnueabi
+# apt-get remove gcc-4.7-arm-linux-gnueabi-base gcc-arm-linux-gnueabi
+
+@@@ # apt-get install libmpfr-dev libmpc-dev libgmp-dev
+
+% wget http://ftp.gnu.org/gnu/binutils/binutils-2.23.2.tar.bz2
+% tar xfj binutils-2.23.2.tar.bz2
+% cd binutils-2.23.2
+% mkdir obj
+% cd obj
+% ../configure --target=arm-none-eabi -enable-interwork --enable-multilib
+% make -j5
+% make install
+% cd ../..
+
+% wget ftp://sourceware.org/pub/newlib/newlib-2.0.0.tar.gz
+% tar xfz newlib-2.0.0.tar.gz
+
+% wget http://ftp.gnu.org/gnu/gcc/gcc-4.7.3/gcc-4.7.3.tar.bz2
+% tar xfj gcc-4.7.3.tar.bz2
+% cd gcc-4.7.3
+% mkdir obj
+% cd obj
+% ../configure --target=arm-none-eabi --enable-interwork --enable-languages=c \
+  --with-newlib --with-headers=../../newlib-2.0.0/newlib/libc/include
+% make -j5
+% make install
+% cd ../..
+
+% wget ftp://ftp.gnu.org/gnu/gdb/gdb-7.6.tar.bz2
+% tar xfj gdb-7.6.tar.bz2
+% cd gdb-7.6
+% ./configure --target=arm-none-eabi --enable-interwork --enable-multilib
+% make -j5
+% make install
+% cd ..
+
+% cd newlib-2.0.0
+% mkdir obj
+% cd obj
+% ../configure --target=arm-none-eabi --enable-interwork --enable-multilib \
+  --disable-newlib-supplied-syscalls
+% make -j5
+% make install
+% cd ../..
+
+Note: some configuration changes (e.g., --disable-...-syscalls) to newlib
+require removal of /usr/local/arm-none-eabi/ and a full reinstallation of
+the toolchain.
+
+
