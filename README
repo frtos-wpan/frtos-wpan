@@ -23,7 +23,7 @@ maintaining the SVN-to-git tracking repository):
 # apt-get install git-svn
 
 The official ARM cross-compilation toolchain
-https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded
+https://launchpad.net/gcc-arm-embedded
 
 # add-apt-repository ppa:terry.guo/gcc-arm-embedded
 # apt-get update
