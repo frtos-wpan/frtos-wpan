@@ -261,8 +261,13 @@ The Contiki demo
 
 The demo runs on the Olimex STM32-E407. It
 
-- TBD
+- blinks the LED at some 0.1 Hz, and
+
+- displays diagnostics on UART6.TX at 115200 bps
 
 % cd contiki-outoftree
-% make TARGET=stm32ldiscovery PREFIX=arm-linux-gnueabi -C libopencm3
-% make TARGET=stm32ldiscovery PREFIX=arm-linux-gnueabi
+% make -C libopencm3
+% make TARGET=stm32-e407 -j5
+<bridge B0_1 and reset>
+% make TARGET=stm32-e407 dfu
+<move jumper back to B0_0 and reset again>
