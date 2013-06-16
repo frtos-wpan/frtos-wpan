@@ -161,15 +161,46 @@ FreeRTOS (from SVN):
 Transitory contiki-outoftree repository
 ---------------------------------------
 
+prepare clone after initial fork:
+
+% git rm contiki
+% git rm libopencm3
+% git submodule add git@github.com:frtos-wpan/contiki.git contiki
+% git submodule add git@github.com:frtos-wpan/libopencm3.git libopencm3
+
+clone:
+
 % git clone git@github.com:frtos-wpan/contiki-outoftree.git
+% git remote add upstream https://github.com/karlp/contiki-outoftree.git
 % git submodule init
 % git submodule update
-% git remote add upstream https://github.com/karlp/contiki-outoftree.git
+
+update:
 
 % git fetch upstream
 % git submodule update
 % git checkout master
 % git merge upstream/master
+
+
+Transitory contiki-cm3 repository
+---------------------------------
+
+% git remote add karl git@github.com:karlp/contiki-locm3.git
+
+% git fetch karl
+% git merge karl/locm3
+
+
+Transitory libopencm3 repository
+--------------------------------
+
+% git clone git@github.com:frtos-wpan/libopencm3.git
+% git remote add upstream git@github.com:libopencm3/libopencm3.git
+% git remote add karl git@github.com:karlp/libopencm3.git
+
+% git fetch karl
+% git merge karl/master
 
 
 Caching the data sheets
