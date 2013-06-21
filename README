@@ -111,6 +111,7 @@ FreeRTOS (from SVN):
 % cd freertos
 % git svn fetch
 % git merge --ff-only trunk
+  (or simply   git merge trunk  depending on state of branch)
 % cd ..
 
 
