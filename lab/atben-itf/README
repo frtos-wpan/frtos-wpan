@@ -1,14 +1,13 @@
 atben on STM32-E407 (Contiki) design verification
 =================================================
 
-Software state: frtos-wpan/contiki-outoftree commit
-88a7237e9fb15055c70886b5c3eb6cd1b333133c
-
-
 SCLK timing
 -----------
 
-The data sheet specifies only the maximum SCLK frequency (11.4.2 =
+Software state: frtos-wpan/contiki-outoftree commit
+88a7237e9fb15055c70886b5c3eb6cd1b333133c
+
+The data sheet specifies only the maximum SCLK frequency (12.4.2 =
 7.5 MHz) but not the duty cycle or minimum SCLK high or low times.
 
 We therefore assume that a period must not be below 1/fSCLK and
