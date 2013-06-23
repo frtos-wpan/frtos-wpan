@@ -257,8 +257,10 @@ Note that the first "make" will download the ST "demonstration builder
 platform" and therefore needs Internet access.
 
 
-The Contiki demo
-----------------
+The Contiki demo (basic)
+------------------------
+
+(Up to frtos-wpan commit b0471c3c42767b3943610585a1ca0e7f1e1087ef)
 
 The demo runs on the Olimex STM32-E407. It
 
@@ -272,3 +274,66 @@ The demo runs on the Olimex STM32-E407. It
 <bridge B0_1 and reset>
 % make TARGET=stm32-e407 dfu
 <move jumper back to B0_0 and reset again>
+
+
+The Contiki demo (atben)
+------------------------
+
+(frtos-wpan commit and later d82977b872f07bc4dde004275309b89e4a6810d4)
+
+The demo runs on the Olimex STM32-E407. It
+
+- initializes an atben board in the uSD connector
+
+- starts a shell on UART6 at 115200 bps
+
+The build instructions are the same as for the previous demo.
+
+To access the console, run
+
+# neocon -L /dev/ttyUSB0
+
+Test transmission:
+
+- run an IEEE 802.15.4 receiver listening on channel 11
+
+- on the Contiki console, run
+  rime-ping 3.3
+
+- the receiver should now show a messgage looking roughly like this:
+
+  41 c8 48 cd ab ff ff 00 00 00 00 00 00 00 00 1b
+  00 00 00 02 00 00 00 00 00 03 03 02 00
+
+Test reception:
+
+- on the Contiki console, run
+  sniff -a
+
+- run an IEEE 802.15.4 transmitter sending this on channel 11:
+
+  41 c8 48 ff ff ff ff ff 00 00 00 00 00 00 00 1b
+  00 00 00 02 00 00 00 00 00 03 03 02 00
+
+- Contiki should now show something like
+
+  rf230_read: 29 bytes lqi 255
+
+When using atusb for the peer, the commands would be:
+
+Detach kernel driver (if present):
+
+# cd /sys/bus/usb/drivers/atusb
+# echo 3-1:1.0 >unbind
+
+The string to write to "unbind" depends on the topology of the USB
+system.
+
+Receive:
+
+# ./atrf-txrx -c 11 -x
+
+Send:
+
+# ./atrf-txrx -c 11 -x \
+  41c848ffffffffff000000000000001b00000002000000000003030200
