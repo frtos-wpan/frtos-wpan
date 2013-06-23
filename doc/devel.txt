@@ -1,0 +1,76 @@
+devel.txt - Information for use during the development process
+==============================================================
+
+In the end, all of this should either disappear of get merged into
+the top-level README.
+
+
+Transitory contiki-outoftree repository
+---------------------------------------
+
+prepare clone after initial fork:
+
+% git clone git@github.com:frtos-wpan/contiki-outoftree.git
+% cd contiki-outoftree
+% git remote add upstream https://github.com/karlp/contiki-outoftree.git
+% git rm contiki
+% git rm libopencm3
+% git submodule add git@github.com:frtos-wpan/contiki.git contiki
+% git submodule add git@github.com:frtos-wpan/libopencm3.git libopencm3
+% git commit -a -m "redirect submodules to project-local forks"
+% git push
+% cd ..
+
+clone (from repository with above preparation):
+
+% cd contiki-outoftree
+% git clone git@github.com:frtos-wpan/contiki-outoftree.git
+% git remote add upstream https://github.com/karlp/contiki-outoftree.git
+% git submodule init
+% git submodule update
+% cd ..
+
+update:
+
+% cd contiki-outoftree
+% git fetch upstream
+% git submodule update
+% git checkout master
+% git merge upstream/master
+% cd ..
+
+
+Transitory contiki-cm3 repository
+---------------------------------
+
+add upstream for CM3 port:
+
+% cd contiki
+% git remote add karl git@github.com:karlp/contiki-locm3.git
+% cd ..
+
+update:
+
+% cd contiki
+% git fetch karl
+% git merge karl/locm3
+% cd ..
+
+
+Transitory libopencm3 repository
+--------------------------------
+
+clone:
+
+% git clone git@github.com:frtos-wpan/libopencm3.git
+% cd libopencm3
+% git remote add upstream git@github.com:libopencm3/libopencm3.git
+% git remote add karl git@github.com:karlp/libopencm3.git
+% cd ..
+
+update:
+
+% cd libopencm3
+% git fetch karl
+% git merge karl/master
+% cd ..
