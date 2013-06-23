@@ -70,3 +70,8 @@ N: AN3422
 A: STM32F1-L1-Migration
 A: f1l1mig
 D: http://www.st.com/st-web-ui/static/active/en/resource/technical/document/application_note/DM00032987.pdf
+
+N: at86rf231
+A: rf231
+A: txrx
+D: http://www.atmel.com/dyn/resources/prod_documents/doc8111.pdf
