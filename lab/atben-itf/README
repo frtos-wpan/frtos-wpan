@@ -19,3 +19,65 @@ sys-48MHz-sclk.png
 
 The period easily meets the constraints with 458 ns > 133 ns
 The high time also meets the constraints with 82 ns > 67 ns
+
+
+SLP_TR timing
+-------------
+
+Software state: frtos-wpan/contiki-outoftree commit
+88a7237e9fb15055c70886b5c3eb6cd1b333133c
+
+contiki with the following correction to rf230bb.c:
+
+diff --git a/cpu/avr/radio/rf230bb/rf230bb.c b/cpu/avr/radio/rf230bb/rf230bb.c
+index 65f9616..195e9a9 100644
+--- a/cpu/avr/radio/rf230bb/rf230bb.c
++++ b/cpu/avr/radio/rf230bb/rf230bb.c
+@@ -965,9 +965,9 @@ rf230_transmit(unsigned short payload_len)
+   HAL_ENTER_CRITICAL_REGION();
+ 
+   /* Toggle the SLP_TR pin to initiate the frame transmission */
++  hal_frame_write(buffer, total_len);
+   hal_set_slptr_high();
+   hal_set_slptr_low();
+-  hal_frame_write(buffer, total_len);
+ 
+   HAL_LEAVE_CRITICAL_REGION();
+   PRINTF("rf230_transmit: %d\n", (int)total_len);
+
+This works if we add some debugging printfs but not without them.
+Possible sources of trouble would be
+a) the driver not giving the transceiver enough time to enter
+   PLL_ON,
+b) SLP_TR following the end of the buffer write too early, and
+c) the SLP_TR pulse being too short.
+
+We're mainly interested in the SLP_TR timing. The data sheer
+specifies a minimum duration for the SLP_TR pulse (12.4.9) of
+t7 = 62.5 ns and a maximum duration of "TX frame length + 16 us".
+We shall interpret the latter simply as 16 us.
+
+It does not specify a minimum time between nSEL of a buffer write
+going high and the rising edge of the SLP_TR pulse to start
+sending.
+
+Most interface-level delays the transceiver requires are in the
+order of a few hundred nanoseconds, so we shall assume that 0.5 us
+between SCLK and SLP_TR should be sufficient.
+
+This measurement was taken with the system clock set to 48 MHz:
+
+sys-48MHz-nsel-slp_tr.png
+
+Channel 1 (yellow) shows SLP_TR, channel 2 (blue) shows nSEL.
+
+The SLP_TR pulse width meets the constraints with 250 ns > 65 ns
+and is much shorter than 16 us maximum.
+
+The time between nSEL and SLP_TR is about 450 ns, which seems
+borderline, given the assumption above.
+
+The time between the end of the previous command (the write of
+PLL_ON, nSEL rising) and the rising edge of SLP_TR is about 130 us.
+The data sheet (table 7-1, tTR4) specifies a typical PLL setting
+time of 110 us, so this should be safe.
