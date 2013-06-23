@@ -45,14 +45,7 @@ index 65f9616..195e9a9 100644
    HAL_LEAVE_CRITICAL_REGION();
    PRINTF("rf230_transmit: %d\n", (int)total_len);
 
-This works if we add some debugging printfs but not without them.
-Possible sources of trouble would be
-a) the driver not giving the transceiver enough time to enter
-   PLL_ON,
-b) SLP_TR following the end of the buffer write too early, and
-c) the SLP_TR pulse being too short.
-
-We're mainly interested in the SLP_TR timing. The data sheer
+We're mainly interested in the SLP_TR timing. The data sheet
 specifies a minimum duration for the SLP_TR pulse (12.4.9) of
 t7 = 62.5 ns and a maximum duration of "TX frame length + 16 us".
 We shall interpret the latter simply as 16 us.
