@@ -2,7 +2,19 @@
 
 @@@ WIP. the github setup is a bit awkward. may change in the future.
 
-See README.md for a brief project overview.
+README files and other docummentation
+-------------------------------------
+
+There is the following documentation:
+
+- README.md gives a brief project overview,
+
+- this file explains what you need to know to use this project,
+
+- doc/toolchain.txt describes how to build a toolchain from sources
+  (warning: may not work properly and there's the prebuilt "official"
+  ARM toolchain you could just download and/or install)
+
 
 License
 -------
