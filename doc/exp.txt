@@ -46,7 +46,8 @@ platform" and therefore needs Internet access.
 The Contiki demo (basic)
 ------------------------
 
-(Up to frtos-wpan commit b0471c3c42767b3943610585a1ca0e7f1e1087ef)
+(Up to frtos-wpan/contiki-outoftree commit
+b0471c3c42767b3943610585a1ca0e7f1e1087ef)
 
 The demo runs on the Olimex STM32-E407. It
 
@@ -65,7 +66,8 @@ The demo runs on the Olimex STM32-E407. It
 The Contiki demo (atben)
 ------------------------
 
-(frtos-wpan commit and later d82977b872f07bc4dde004275309b89e4a6810d4)
+(frtos-wpan/contiki-outoftree commit d82977b872f07bc4dde004275309b89e4a6810d4
+and later)
 
 The demo runs on the Olimex STM32-E407. It
 
