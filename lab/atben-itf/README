@@ -1,0 +1,22 @@
+atben on STM32-E407 (Contiki) design verification
+=================================================
+
+Software state: frtos-wpan/contiki-outoftree commit
+88a7237e9fb15055c70886b5c3eb6cd1b333133c
+
+
+SCLK timing
+-----------
+
+The data sheet specifies only the maximum SCLK frequency (11.4.2 =
+7.5 MHz) but not the duty cycle or minimum SCLK high or low times.
+
+We therefore assume that a period must not be below 1/fSCLK and
+that neither high or low must be shorter than 1/(2*fSCLK).
+
+This measurement was taken with the system clock set to 48 MHz:
+
+sys-48MHz-sclk.png
+
+The period easily meets the constraints with 458 ns > 133 ns
+The high time also meets the constraints with 82 ns > 67 ns
