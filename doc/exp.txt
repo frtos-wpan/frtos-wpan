@@ -21,6 +21,8 @@ Setting up the Olimex STM32-E407 board
 The FreeRTOS demo
 -----------------
 
+(Up to frtos-wpan/freertos commit bf5ae2b614d8d6d4ccb06298c766475e9c2bcf07)
+
 The demo runs on the Olimex STM32-E407. It
 
 - blinks the LED, and
