@@ -21,7 +21,7 @@ Setting up the Olimex STM32-E407 board
 The FreeRTOS demo
 -----------------
 
-(Up to frtos-wpan/freertos commit bf5ae2b614d8d6d4ccb06298c766475e9c2bcf07)
+(Up to frtos-wpan/freertos commit cbb4e798cf604a8fd1284755dfc825b5f4125add)
 
 The demo runs on the Olimex STM32-E407. It
 
