@@ -18,8 +18,8 @@ Setting up the Olimex STM32-E407 board
   board should now enumerate as 0483:df11.
 
 
-The FreeRTOS demo
------------------
+The FreeRTOS demo (basic)
+-------------------------
 
 (Up to frtos-wpan/freertos commit cbb4e798cf604a8fd1284755dfc825b5f4125add)
 
@@ -125,3 +125,30 @@ Send:
 
 # ./atrf-txrx -c 11 -x \
   41c848ffffffffff000000000000001b00000002000000000003030200
+
+
+The FreeRTOS-Contiki hybrid demo (basic)
+----------------------------------------
+
+Commits:
+
+frtos-wpan/freertos fa36f54b9348c233b19eae226543e3c3331561c2
+frtos-wpan/contiki-outoftree f4f139e1e6a366d16bb5711c222db27dcd248ae8
+
+What it does:
+
+- FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps
+  on the serial console
+
+- Contiki starts under FreeRTOS, brings up RIME, prints a hello
+  message, and enters the shell (no serial input is accepted at this
+  point, so the shell just sits there)
+
+% cd contiki-outoftree/platform/freertos
+% ./m -a
+% cd ../../..
+% cd freertos/FreeRTOS/Demo/E407
+% make
+< put board in DFU mode >
+% make dfu
+< reset board >
