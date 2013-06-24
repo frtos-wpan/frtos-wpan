@@ -140,10 +140,15 @@ What it does:
 - FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps
   on the serial console
 
+- FreeRTOS also blinks the LED
+
 - Contiki starts under FreeRTOS, brings up RIME, prints a hello
   message, and enters the shell (no serial input is accepted at this
   point, so the shell just sits there)
 
+% cd freertos/FreeRTOS/Demo/E407
+% make FreeRTOSConfig.h
+% cd ../../../../
 % cd contiki-outoftree/platform/freertos
 % ./m -a
 % cd ../../..
