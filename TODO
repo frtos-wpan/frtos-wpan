@@ -1,0 +1,59 @@
+To do items and known issues
+============================
+
+In no particular order and not necessarily complete.
+
+
+FreeRTOS, general
+-----------------
+
+- find out why selecting 38400 bps under FreeRTOS sets the UART to 19200 bps
+
+- enable serial input (and pass to Contiki)
+
+- check what system clock speed we're actually using
+
+- rename E407 ... maybe STM32_E407_GCC ?
+
+- clean up and submit E407 support to FreeRTOS mainline
+
+- populate hooks (some marked with @@@)
+
+
+Contiki, general
+----------------
+
+- submit verbosity control to Contiki mainline
+
+
+Hybrid
+------
+
+- return correct value in clocks.c (clock_seconds)
+
+- support Contiki rtimers in hybrid
+
+- separate hybrid from E407 port (maybe just fork)
+
+- define how interrupts are passed to Contiki under FreeRTOS. Possible
+  solution:
+  - run them from a high-priority interrupt task,
+  - run Contiki interrupt handler directly from FreeRTOS interrupt handler
+  Note that the hardware would always be configured from the FreeRTOS
+  side (i.e., by the "Demo")
+
+
+atben experiments
+-----------------
+
+- make sure bit-banging HAL doesn't get excessively fast (in general and
+  especially under FreeRTOS)
+
+- add rf230bb to Contiki side of hybrid build
+
+- add rf230bb HAL to FreeRTOS side of hybrid build
+
+- make SPI-to-atben adapter and use hardware SPI device
+  (e.g., SPI2 available on UEXT)
+
+- fix issues marked with @@@ in platform/stm32-e407/hal.c
