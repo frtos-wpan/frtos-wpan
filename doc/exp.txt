@@ -132,8 +132,8 @@ The FreeRTOS-Contiki hybrid demo (basic)
 
 Commits:
 
-frtos-wpan/freertos fa36f54b9348c233b19eae226543e3c3331561c2
-frtos-wpan/contiki-outoftree f4f139e1e6a366d16bb5711c222db27dcd248ae8
+frtos-wpan/freertos from fa36f54b9348c233b19eae226543e3c3331561c2
+frtos-wpan/contiki-outoftree from f4f139e1e6a366d16bb5711c222db27dcd248ae8
 
 What it does:
 
@@ -146,12 +146,23 @@ What it does:
   message, and enters the shell (no serial input is accepted at this
   point, so the shell just sits there)
 
+Building:
+
 % cd freertos/FreeRTOS/Demo/E407
 % make FreeRTOSConfig.h
 % cd ../../../../
 % cd contiki-outoftree/platform/freertos
 % ./m -a
 % cd ../../..
+% cd freertos/FreeRTOS/Demo/E407
+% make
+< put board in DFU mode >
+% make dfu
+< reset board >
+
+Simplified build (starting with frtos-wpan/freertos commit
+519200bdddbb928ac3bf6a8d62fdd35caa9fdae9):
+
 % cd freertos/FreeRTOS/Demo/E407
 % make
 < put board in DFU mode >
