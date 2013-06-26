@@ -4,12 +4,21 @@ To do items and known issues
 In no particular order and not necessarily complete.
 
 
+General
+-------
+
+- check out fresh repos and build from scratch (and move old things to a new
+  name), to verify that the repos are complete
+
+- configure 6LoWPAN/RPL network
+
+- set up JTAG, in case debugging is needed
+
+
 FreeRTOS, general
 -----------------
 
 - find out why selecting 38400 bps under FreeRTOS sets the UART to 19200 bps
-
-- enable serial input (and pass to Contiki)
 
 - check what system clock speed we're actually using
 
@@ -41,6 +50,8 @@ Hybrid
   - run Contiki interrupt handler directly from FreeRTOS interrupt handler
   Note that the hardware would always be configured from the FreeRTOS
   side (i.e., by the "Demo")
+
+  Tentative solution: keep it simple and pass them directly.
 
 
 atben experiments
