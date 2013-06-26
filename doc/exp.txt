@@ -137,8 +137,9 @@ frtos-wpan/contiki-outoftree from f4f139e1e6a366d16bb5711c222db27dcd248ae8
 
 What it does:
 
-- FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps
-  on the serial console
+- until frtos-wpan/freertos commit c79d3782ed3845a3706f2bb138e0776ffbef0c90
+  FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps on
+  the serial console
 
 - FreeRTOS also blinks the LED
 
