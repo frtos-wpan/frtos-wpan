@@ -143,8 +143,8 @@ What it does:
 - FreeRTOS also blinks the LED
 
 - Contiki starts under FreeRTOS, brings up RIME, prints a hello
-  message, and enters the shell (no serial input is accepted at this
-  point, so the shell just sits there)
+  message, and enters the shell (input may or not be accepted, see
+  below)
 
 Building:
 
@@ -168,3 +168,10 @@ Simplified build (starting with frtos-wpan/freertos commit
 < put board in DFU mode >
 % make dfu
 < reset board >
+
+The shell accepts input on the serial console starting with
+frtos-wpan/freertos commit cfb424510c6e2e35d56ad652a8e8898367d8ea5d
+
+To access the console, run
+
+# neocon -L -b 19200 /dev/ttyUSB0
