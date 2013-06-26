@@ -138,8 +138,8 @@ frtos-wpan/contiki-outoftree from f4f139e1e6a366d16bb5711c222db27dcd248ae8
 What it does:
 
 - until frtos-wpan/freertos commit c79d3782ed3845a3706f2bb138e0776ffbef0c90
-  FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps on
-  the serial console
+  FreeRTOS prints an infinite series of "hello NUMBER" at 19200 bps or
+  115200 bps (see below) on the serial console
 
 - FreeRTOS also blinks the LED
 
@@ -175,4 +175,12 @@ frtos-wpan/freertos commit cfb424510c6e2e35d56ad652a8e8898367d8ea5d
 
 To access the console, run
 
-# neocon -L -b 19200 /dev/ttyUSB0
+- if using a frtos-wpan/freertos commit before commit
+  23f09fba956381212ee4663682e019c6bd8f0afe
+
+  # neocon -L -b 19200 /dev/ttyUSB0
+
+- if using a frtos-wpan/freertos commit starting with
+  450022ccb2617a409c5c30862a0a587b46da9cea
+
+  # neocon -L /dev/ttyUSB0

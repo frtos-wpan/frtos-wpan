@@ -18,10 +18,6 @@ General
 FreeRTOS, general
 -----------------
 
-- find out why selecting 38400 bps under FreeRTOS sets the UART to 19200 bps
-
-- check what system clock speed we're actually using
-
 - rename E407 ... maybe STM32_E407_GCC ?
 
 - clean up and submit E407 support to FreeRTOS mainline
