@@ -53,13 +53,6 @@ Hybrid
 atben experiments
 -----------------
 
-- make sure bit-banging HAL doesn't get excessively fast (in general and
-  especially under FreeRTOS)
-
-- add rf230bb to Contiki side of hybrid build
-
-- add rf230bb HAL to FreeRTOS side of hybrid build
-
 - make SPI-to-atben adapter and use hardware SPI device
   (e.g., SPI2 available on UEXT)
 

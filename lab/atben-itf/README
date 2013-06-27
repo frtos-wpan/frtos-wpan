@@ -1,8 +1,8 @@
 atben on STM32-E407 (Contiki) design verification
 =================================================
 
-SCLK timing
------------
+SCLK timing (Contiki, 48 MHz system clock, bit-banging)
+-------------------------------------------------------
 
 Software state: frtos-wpan/contiki-outoftree commit
 88a7237e9fb15055c70886b5c3eb6cd1b333133c
@@ -21,8 +21,8 @@ The period easily meets the constraints with 458 ns > 133 ns
 The high time also meets the constraints with 82 ns > 67 ns
 
 
-SLP_TR timing
--------------
+SLP_TR timing (Contiki, 48 MHz system clock, bit-banging)
+---------------------------------------------------------
 
 Software state: frtos-wpan/contiki-outoftree commit
 88a7237e9fb15055c70886b5c3eb6cd1b333133c
@@ -74,3 +74,37 @@ The time between the end of the previous command (the write of
 PLL_ON, nSEL rising) and the rising edge of SLP_TR is about 130 us.
 The data sheet (table 7-1, tTR4) specifies a typical PLL setting
 time of 110 us, so this should be safe.
+
+
+SCLK timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
+------------------------------------------------------------------------
+
+Software state: frtos-wpan/freertos commit
+0880301c88881de2778be48d75009123c5e0d292
+
+SCLK measurement:
+
+sys-168MHz-sclk.png
+
+The period easily meets the constraints with 380 ns > 133 ns
+The high time also meets the constraints with 100 ns > 67 ns
+
+The SCLK timing is better than what we had before at a lower
+system clock.
+
+
+SLP_TR timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
+--------------------------------------------------------------------------
+
+Software state: frtos-wpan/freertos commit
+0880301c88881de2778be48d75009123c5e0d292
+
+Channel 1 (yellow) is  SLP_TR), channel 2 (blue) is nSEL:
+
+sys-168MHz-nsel-slp_tr.png
+
+The SLP_TR pulse width easily meets the constraints with
+65 ns < 250 ns < 16 us.
+
+The time between nSEL and SLP_TR is about 300 ns, which still
+doesn't seem to cause any problems.
