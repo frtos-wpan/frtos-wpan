@@ -57,3 +57,4 @@ atben experiments
   (e.g., SPI2 available on UEXT)
 
 - fix issues marked with @@@ in platform/stm32-e407/hal.c
+  and/or Demo/E407/hal.c
