@@ -24,12 +24,6 @@ FreeRTOS, general
 
 - populate hooks (some marked with @@@)
 
-- use configUSE_NEWLIB_REENTRANT (see commit
-  cbcddc596b6facd3fa3bff085dc78f7df24310d2)
-  Requires either private copy of FreeRTOSConfig.h or change of
-  copying/patching script. Also, where does _REENT_INIT_PTR come
-  from ?
-
 
 Contiki, general
 ----------------
