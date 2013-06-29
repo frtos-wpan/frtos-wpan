@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-05-14 BZR 4150)-testing date = Thu Jun 27 22:18:40 2013
+Cmp-Mod V01 Created by CvPcb (2013-05-14 BZR 4150)-testing date = Sat Jun 29 17:09:33 2013
 
 BeginCmp
 TimeStamp = /51CB91C4;
@@ -50,10 +50,10 @@ IdModule  = HDR-3x1-100mil;
 EndCmp
 
 BeginCmp
-TimeStamp = /51CB90F5;
+TimeStamp = /51CF3EF4;
 Reference = CON6;
-ValeurCmp = MEMCARD8-SHIELD4;
-IdModule  = 8:10-SOCKET-RA;
+ValeurCmp = MEMCARD8-SHIELD4-SW;
+IdModule  = 8:10-SOCKET-RA-PUSH-PULL;
 EndCmp
 
 BeginCmp
@@ -120,9 +120,9 @@ IdModule  = 0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /51CBA4F2;
+TimeStamp = /51CF2C30;
 Reference = SW1;
-ValeurCmp = SW_PUSH;
+ValeurCmp = FSMRA2JH;
 IdModule  = TACTIL-SW-SPST-RA-1.25mm-3.86mm;
 EndCmp
 

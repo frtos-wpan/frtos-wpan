@@ -27,17 +27,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MEMCARD8-SHIELD4 CON6
-U 1 1 51CB90F5
-P 1550 5100
-F 0 "CON6" H 1450 5600 60  0000 L CNN
-F 1 "MEMCARD8-SHIELD4" H 1700 4650 60  0000 C CNN
-F 2 "" H 1550 5100 60  0000 C CNN
-F 3 "" H 1550 5100 60  0000 C CNN
-	1    1550 5100
-	-1   0    0    -1  
-$EndComp
-$Comp
 L ATTINY87-DUAL U1
 U 1 1 51CB9119
 P 7900 5150
@@ -112,7 +101,7 @@ F 1 "CONN_2" H 1500 1700 60  0000 C CNN
 F 2 "" H 1500 1850 60  0000 C CNN
 F 3 "" H 1500 1850 60  0000 C CNN
 	1    1500 1850
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 $Comp
 L CONN_3 CON5
@@ -163,12 +152,12 @@ PG10/UEXT_CS
 $Comp
 L GND #PWR01
 U 1 1 51CB9415
-P 700 5550
-F 0 "#PWR01" H 700 5550 30  0001 C CNN
-F 1 "GND" H 700 5480 30  0001 C CNN
-F 2 "" H 700 5550 60  0000 C CNN
-F 3 "" H 700 5550 60  0000 C CNN
-	1    700  5550
+P 600 5600
+F 0 "#PWR01" H 600 5600 30  0001 C CNN
+F 1 "GND" H 600 5530 30  0001 C CNN
+F 2 "" H 600 5600 60  0000 C CNN
+F 3 "" H 600 5600 60  0000 C CNN
+	1    600  5600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -429,19 +418,6 @@ Wire Wire Line
 Wire Wire Line
 	4500 2400 4500 1400
 Wire Wire Line
-	700  5100 700  5550
-Wire Wire Line
-	700  5100 850  5100
-Wire Wire Line
-	850  5200 700  5200
-Connection ~ 700  5200
-Wire Wire Line
-	850  5300 700  5300
-Connection ~ 700  5300
-Wire Wire Line
-	850  5400 700  5400
-Connection ~ 700  5400
-Wire Wire Line
 	1900 5200 2100 5200
 Wire Wire Line
 	2100 5200 2100 5600
@@ -694,16 +670,15 @@ Wire Wire Line
 	10800 4500 9800 4500
 Wire Wire Line
 	10800 4650 9800 4650
-Text Label 10300 4800 0    60   ~ 0
-B0
 Text Label 10300 4950 0    60   ~ 0
+B0
+Text Label 10300 4800 0    60   ~ 0
 TGT_RST
 Wire Wire Line
 	10800 4800 9800 4800
 Wire Wire Line
 	10800 4950 9800 4950
 NoConn ~ 9800 5400
-NoConn ~ 6000 5850
 NoConn ~ 9800 5550
 Text Label 10300 4650 0    60   ~ 0
 GREEN
@@ -780,4 +755,41 @@ Wire Wire Line
 	7100 3500 7100 3700
 Wire Wire Line
 	7300 3500 7300 3700
+Wire Wire Line
+	600  4800 600  5600
+Wire Wire Line
+	600  5100 650  5100
+Wire Wire Line
+	650  5200 600  5200
+Connection ~ 600  5200
+Wire Wire Line
+	650  5300 600  5300
+Connection ~ 600  5300
+Wire Wire Line
+	650  5400 600  5400
+Connection ~ 600  5400
+$Comp
+L MEMCARD8-SHIELD4-SW CON6
+U 1 1 51CF3EF4
+P 1550 5100
+F 0 "CON6" H 1450 5600 60  0000 L CNN
+F 1 "MEMCARD8-SHIELD4-SW" H 1800 4650 60  0000 C CNN
+F 2 "" H 1550 5100 60  0000 C CNN
+F 3 "" H 1550 5100 60  0000 C CNN
+	1    1550 5100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	600  4800 650  4800
+Connection ~ 600  5100
+Wire Wire Line
+	600  4000 600  4700
+Wire Wire Line
+	600  4700 650  4700
+Wire Wire Line
+	4800 5850 6000 5850
+Text Label 4900 5850 0    60   ~ 0
+CARD_SW
+Text Label 600  4500 1    60   ~ 0
+CARD_SW
 $EndSCHEMATC

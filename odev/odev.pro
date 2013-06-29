@@ -52,6 +52,6 @@ LibName2=../../../qi/kicad-libs/modules/pads
 LibName3=../../../qi/kicad-libs/modules/ssop
 LibName4=../../../qi/kicad-libs/modules/header
 LibName5=../../../qi/kicad-libs/modules/zx62-b-5pa
-LibName6=../../../qi/kicad-libs/modules/8_10-socket-ra
+LibName6=../../../qi/kicad-libs/modules/8_10-socket-ra-push-pull
 LibName7=../../../qi/kicad-libs/modules/tactile-sw-spst-ra-dip
 LibName8=../../../qi/kicad-libs/modules/sot
