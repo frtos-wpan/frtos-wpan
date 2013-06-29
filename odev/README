@@ -1,0 +1,32 @@
+odev - atben adapter board for Olimex STM32-E407 
+================================================
+
+The main function of this board is to connect an 8:10 card holder to
+the signals available on the Olimex STM32-E407 development board. The
+pin assignment is chosen such that the SPI interface can drive an
+atben board inserted into the 8:10 card interface.
+
+The board also routes the TX and RX lines of UART6 from UEXT to a
+100 mil header, such that a serial console can be used even when odev
+is present.
+
+It can also be equipped with an ATtiny87 microcontroller. If present,
+this microcontroller as access to the the TX/RX lines, a FET to switch
+atben power, and via an additional header also to the reset and B0
+signals of the development board.
+
+This can be used by writing firmware that, for example:
+
+- resets with B0 set to run code from Flash when the button if pressed
+  once,
+
+- resets with B0 set to run DFU when the button is pressed another
+  time,
+
+- power-cycles the atben board if the button is pressed and held down
+  for a certain amount of time.
+
+If the USB receptacle is equipped as well, then V-USB firmware could
+be loaded that implements remote reset and that gives access to the
+serial console, thereby eliminating the need for an external serial
+interface.

@@ -1,0 +1,164 @@
+Cmp-Mod V01 Created by CvPcb (2013-05-14 BZR 4150)-testing date = Thu Jun 27 22:18:40 2013
+
+BeginCmp
+TimeStamp = /51CB91C4;
+Reference = C1;
+ValeurCmp = 100nF;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9C0E;
+Reference = C2;
+ValeurCmp = 1uF;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9197;
+Reference = CON1;
+ValeurCmp = CONN_5;
+IdModule  = HDR-5x1-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB91A6;
+Reference = CON2;
+ValeurCmp = CONN_5;
+IdModule  = HDR-5x1-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB91E2;
+Reference = CON3;
+ValeurCmp = CONN_2;
+IdModule  = HDR-2x1-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CCE545;
+Reference = CON4;
+ValeurCmp = MICRO_USB_B;
+IdModule  = ZX62-B-5PA;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB91F1;
+Reference = CON5;
+ValeurCmp = CONN_3;
+IdModule  = HDR-3x1-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB90F5;
+Reference = CON6;
+ValeurCmp = MEMCARD8-SHIELD4;
+IdModule  = 8:10-SOCKET-RA;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB91B5;
+Reference = D1;
+ValeurCmp = RED;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CBA188;
+Reference = D2;
+ValeurCmp = GREEN;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB92AF;
+Reference = Q1;
+ValeurCmp = PMOSFET-GSD;
+IdModule  = SOT-523;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB91D3;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9941;
+Reference = R2;
+ValeurCmp = 22;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB994E;
+Reference = R3;
+ValeurCmp = 22;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CBA1A2;
+Reference = R4;
+ValeurCmp = 100;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CBA1A8;
+Reference = R5;
+ValeurCmp = 100;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CC96A3;
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CBA4F2;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = TACTIL-SW-SPST-RA-1.25mm-3.86mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9E85;
+Reference = TP1;
+ValeurCmp = TESTPOINT;
+IdModule  = PAD_C_80x80;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9ED6;
+Reference = TP2;
+ValeurCmp = TESTPOINT;
+IdModule  = PAD_C_80x80;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9ED0;
+Reference = TP3;
+ValeurCmp = TESTPOINT;
+IdModule  = PAD_C_80x80;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9E33;
+Reference = TP4;
+ValeurCmp = TESTPOINT;
+IdModule  = PAD_C_80x80;
+EndCmp
+
+BeginCmp
+TimeStamp = /51CB9119;
+Reference = U1;
+ValeurCmp = ATTINY87-DUAL;
+IdModule  = SSOP-20;
+EndCmp
+
+EndListe
