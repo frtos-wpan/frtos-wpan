@@ -103,17 +103,15 @@ The high time also meets the constraints with 140 ns > 67 ns
 SLP_TR timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
 --------------------------------------------------------------------------
 
-*** NEEDS TO BE REVISED ***
-
 Software state: frtos-wpan/freertos commit
-0880301c88881de2778be48d75009123c5e0d292
+3af3d6f31da5332ba6074a6d0541893760fc5537
 
 Channel 1 (yellow) is  SLP_TR), channel 2 (blue) is nSEL:
 
 sys-168MHz-nsel-slp_tr.png
 
-The SLP_TR pulse width easily meets the constraints with
-65 ns < 250 ns < 16 us.
+The SLP_TR pulse width meets the constraints with
+65 ns < 100 ns < 16 us.
 
 The time between nSEL and SLP_TR is about 300 ns, which still
 doesn't seem to cause any problems.
