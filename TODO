@@ -30,6 +30,8 @@ Contiki, general
 
 - submit verbosity control to Contiki mainline
 
+- submit SLP_TR after frame write fix (rf230bb.c) to Contiki mainline
+
 
 Hybrid
 ------
