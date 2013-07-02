@@ -89,6 +89,16 @@ sys-168MHz-sclk.png
 The period meets the constraints with 182 ns > 133 ns
 The high time does not meet the constraints of 50 ns > 67 ns
 
+As of frtos-wpan/freertos commit
+3af3d6f31da5332ba6074a6d0541893760fc5537
+we therefore stretch the SCLK high phase by writing the bit three
+times. Measurement:
+
+sys-168MHz-sclk-3x.png
+
+The period easily meets the constraints with 280 ns > 133 ns
+The high time also meets the constraints with 140 ns > 67 ns
+
 
 SLP_TR timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
 --------------------------------------------------------------------------
