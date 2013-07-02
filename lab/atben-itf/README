@@ -80,21 +80,20 @@ SCLK timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
 ------------------------------------------------------------------------
 
 Software state: frtos-wpan/freertos commit
-0880301c88881de2778be48d75009123c5e0d292
+62be01b7b613c7849950db2ff3f9dc618e72ee85
 
 SCLK measurement:
 
 sys-168MHz-sclk.png
 
-The period easily meets the constraints with 380 ns > 133 ns
-The high time also meets the constraints with 100 ns > 67 ns
-
-The SCLK timing is better than what we had before at a lower
-system clock.
+The period meets the constraints with 182 ns > 133 ns
+The high time does not meet the constraints of 50 ns > 67 ns
 
 
 SLP_TR timing (FreeRTOS-Contiki hybrid, 168 MHz system clock, bit-banging)
 --------------------------------------------------------------------------
+
+*** NEEDS TO BE REVISED ***
 
 Software state: frtos-wpan/freertos commit
 0880301c88881de2778be48d75009123c5e0d292
