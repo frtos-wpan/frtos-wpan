@@ -34,8 +34,6 @@ Contiki, general
 Hybrid
 ------
 
-- return correct value in clocks.c (clock_seconds)
-
 - support Contiki rtimers in hybrid
 
 - separate hybrid from E407 port (maybe just fork)
