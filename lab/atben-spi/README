@@ -4,8 +4,8 @@ atben on STM32-E407 (Contiki) design verification
 This set of experiments examines the SPI interface.
 
 
-nSEL vs. SCLK timing
---------------------
+nSEL vs. SCLK timing: register read
+-----------------------------------
 
 Software state: frtos-wpan/freertos commit
 dc3e71e7d268aae8d79f8f7005026888f11a8fc2
@@ -23,3 +23,17 @@ spi-reg-read.png
 
 t5 is met with 2.3 us > 250 ns.
 t9 is also met with 840 ns > 250 ns.
+
+
+nSEL vs. SCLK timing: register write
+------------------------------------
+
+Software state: frtos-wpan/freertos commit
+dc3e71e7d268aae8d79f8f7005026888f11a8fc2
+
+When writing to a register, we're only concerned with t9.
+This is the timing:
+
+spi-reg-write.png
+
+t9 is met with 320 ns > 250 ns.
