@@ -37,3 +37,22 @@ This is the timing:
 spi-reg-write.png
 
 t9 is met with 320 ns > 250 ns.
+
+
+nSEL vs. SCLK timing: buffer read
+---------------------------------
+
+Software state: frtos-wpan/freertos commit
+dc3e71e7d268aae8d79f8f7005026888f11a8fc2
+
+A buffer read is similar to a register read in that t5 and t9
+have to be observed. This is a read of four data bytes, which
+means that a total of seven bytes is send over SPI:
+
+- the buffer read command,
+- the length byte,
+- the four data bytes, and
+- the LQI byte.
+
+t5 is met with 2.1 us > 250 ns.
+t9 is met with 800 ns > 250 ns.
