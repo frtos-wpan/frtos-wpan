@@ -1,6 +1,9 @@
 atben on STM32-E407 (Contiki) design verification
 =================================================
 
+This set of experiments examines the bit-banging GPIO interface.
+
+
 SCLK timing (Contiki, 48 MHz system clock, bit-banging)
 -------------------------------------------------------
 
