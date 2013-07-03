@@ -66,8 +66,8 @@ The demo runs on the Olimex STM32-E407. It
 The Contiki demo (atben)
 ------------------------
 
-(frtos-wpan/contiki-outoftree commit d82977b872f07bc4dde004275309b89e4a6810d4
-and later)
+frtos-wpan/contiki-outoftree commit d82977b872f07bc4dde004275309b89e4a6810d4
+and later
 
 The demo runs on the Olimex STM32-E407. It
 
@@ -134,6 +134,24 @@ Commits:
 
 frtos-wpan/freertos from fa36f54b9348c233b19eae226543e3c3331561c2
 frtos-wpan/contiki-outoftree from f4f139e1e6a366d16bb5711c222db27dcd248ae8
+
+Note: if using frtos-wpan/freertos commit
+370dc0a18b4bf8d2ef00089ac37dde5c61c4c67f or later, the atben board must
+be placed in the 8:10 card holder of an ODEV board. Alternatively, the
+Makefile can be changed as follows:
+
+ODEV settings:
+
+    CFLAGS += -DODEV
+    HAL = hal-spi
+
+Non-ODEV settings:
+
+    #CFLAGS += -DODEV
+    HAL = hal-gpio
+
+If using a version that has no HAL variable, the GPIO bit-banging HAL
+will be used.
 
 What it does:
 
