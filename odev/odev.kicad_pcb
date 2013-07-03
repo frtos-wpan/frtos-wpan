@@ -3,7 +3,7 @@
   (general
     (links 60)
     (no_connects 0)
-    (area 177.253139 111.588999 223.685714 146.95)
+    (area 177.449999 114.949999 215.550001 143.800001)
     (thickness 1.6)
     (drawings 20)
     (tracks 260)
@@ -478,7 +478,7 @@
     (fp_text reference R1 (at 0 -0.381 180) (layer Cmts.User)
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
-    (fp_text value R (at 0 0.381 180) (layer Cmts.User) hide
+    (fp_text value 1k5 (at 0 0.381 180) (layer Cmts.User) hide
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
     (fp_line (start -1.34874 0.6985) (end -1.34874 -0.6985) (layer F.SilkS) (width 0.0762))
@@ -502,7 +502,7 @@
     (fp_text reference R2 (at 0 -0.381 180) (layer Cmts.User)
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
-    (fp_text value 22 (at 0 0.381 180) (layer Cmts.User) hide
+    (fp_text value 68 (at 0 0.381 180) (layer Cmts.User) hide
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
     (fp_line (start -1.34874 0.6985) (end -1.34874 -0.6985) (layer F.SilkS) (width 0.0762))
@@ -526,7 +526,7 @@
     (fp_text reference R3 (at 0 -0.381 180) (layer Cmts.User)
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
-    (fp_text value 22 (at 0 0.381 180) (layer Cmts.User) hide
+    (fp_text value 68 (at 0 0.381 180) (layer Cmts.User) hide
       (effects (font (size 0.508 0.508) (thickness 0.1016)))
     )
     (fp_line (start -1.34874 0.6985) (end -1.34874 -0.6985) (layer F.SilkS) (width 0.0762))
