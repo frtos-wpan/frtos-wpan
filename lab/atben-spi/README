@@ -8,7 +8,7 @@ nSEL vs. SCLK timing
 --------------------
 
 Software state: frtos-wpan/freertos commit
-b5076098e1ae72ccd5ab3657a28fa05b3cc71c2f
+dc3e71e7d268aae8d79f8f7005026888f11a8fc2
 
 Two timing parameters are important here:
 
@@ -21,5 +21,5 @@ received:
 
 spi-reg-read.png
 
-t5 is met with 1.1 us > 250 ns.
-t9 is also met with 700 ns > 250 ns.
+t5 is met with 2.3 us > 250 ns.
+t9 is also met with 840 ns > 250 ns.
