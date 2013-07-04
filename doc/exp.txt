@@ -75,7 +75,16 @@ The demo runs on the Olimex STM32-E407. It
 
 - starts a shell on UART6 at 115200 bps
 
-The build instructions are the same as for the previous demo.
+- sends/receives IEEE 802.15.4 frames over an atben board
+
+The build instructions are the same as for the previous demo. For IEEE
+802.15.4, we assume the Linux PC is equipped with an atusb board and
+has the ben-wpan tools installed. The latter can be obtained with
+
+% git clone git clone git@projects.qi-hardware.com:ben-wpan.git
+% cd ben-wpan/tools
+% make
+# make install
 
 To access the console, run
 
@@ -119,11 +128,11 @@ system.
 
 Receive:
 
-# ./atrf-txrx -c 11 -x
+# atrf-txrx -c 11 -x
 
 Send:
 
-# ./atrf-txrx -c 11 -x \
+# atrf-txrx -c 11 -x \
   41c848ffffffffff000000000000001b00000002000000000003030200
 
 
