@@ -75,3 +75,8 @@ N: at86rf231
 A: rf231
 A: txrx
 D: http://www.atmel.com/dyn/resources/prod_documents/doc8111.pdf
+
+N: Si4464
+A: silabs
+A: fsk
+D: http://www.silabs.com/Support%20Documents/TechnicalDocs/Si4464-63-61-60.pdf
