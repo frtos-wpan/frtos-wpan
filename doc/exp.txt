@@ -63,11 +63,11 @@ The demo runs on the Olimex STM32-E407. It
 <move jumper back to B0_0 and reset again>
 
 
-The Contiki demo (atben)
-------------------------
+The Contiki demo (atben, RIME)
+------------------------------
 
 frtos-wpan/contiki-outoftree commit d82977b872f07bc4dde004275309b89e4a6810d4
-and later
+until 390e37c0d268a8f357f336df5b78a6e1ca9b9bf4
 
 The demo runs on the Olimex STM32-E407. It
 
@@ -142,7 +142,10 @@ The FreeRTOS-Contiki hybrid demo (basic)
 Commits:
 
 frtos-wpan/freertos from fa36f54b9348c233b19eae226543e3c3331561c2
+to 5cb29ca84d824ea00e1f20a18f962aa54b245220
+
 frtos-wpan/contiki-outoftree from f4f139e1e6a366d16bb5711c222db27dcd248ae8
+to 390e37c0d268a8f357f336df5b78a6e1ca9b9bf4
 
 Note: if using frtos-wpan/freertos commit
 370dc0a18b4bf8d2ef00089ac37dde5c61c4c67f or later, the atben board must
