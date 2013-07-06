@@ -49,6 +49,16 @@ Hybrid
 
   Tentative solution: keep it simple and pass them directly.
 
+- recently lost the Contiki console for some reason. See how to get it
+  back. Last "good" build was
+  FreeRTOS Build: Thu Jul  4 21:58:41 ART 2013
+
+- move frame retrieval out of interrupt handler; downgrade critical
+  section handling to less drastic mechanism than currently used
+
+- consider using more WPAN-specific names for WPAN settings than, say,
+  RF_CHANNEL
+
 
 atben experiments
 -----------------
