@@ -40,6 +40,10 @@ Hybrid
 
 - separate hybrid from E407 port (maybe just fork)
 
+- remove overly platform-specific or application-specific items (such
+  as transceiver setup, shell initialization, etc.) from Contiki side
+  of hybrid (keeping them somewhere in Contiki, though)
+
 - define how interrupts are passed to Contiki under FreeRTOS. Possible
   solution:
   - run them from a high-priority interrupt task,
