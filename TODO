@@ -66,3 +66,11 @@ atben experiments
 
 - fix issues marked with @@@ in platform/stm32-e407/hal.c
   and/or Demo/E407/hal.c
+
+
+Linux
+-----
+
+- RFC6282 header compression is badly broken in Linux. A partial fix
+  is in patches/linux-compression-partial-fix.patch
+  Find out what happened there, complete patch, and submit upstream.

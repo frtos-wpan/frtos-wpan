@@ -1,0 +1,27 @@
+This patch is for Linux 3.10.0 and similar. Note that it only works if
+the 802.15.4 sender uses long addresses. Short addressed would require
+the transformation defined in section 3.2.2 of RFC6282. Furthermore,
+we should pass NULL if the respective address is completely absent.
+
+diff --git a/net/ieee802154/6lowpan.c b/net/ieee802154/6lowpan.c
+index 3b9d5f2..9683f5a 100644
+--- a/net/ieee802154/6lowpan.c
++++ b/net/ieee802154/6lowpan.c
+@@ -918,7 +921,7 @@ lowpan_process_data(struct sk_buff *skb)
+ 	/* Source address uncompression */
+ 	pr_debug("source address stateless compression\n");
+ 	err = lowpan_uncompress_addr(skb, &hdr.saddr, lowpan_llprefix,
+-				lowpan_unc_llconf[tmp], skb->data);
++				lowpan_unc_llconf[tmp], mac_cb(skb)->sa.hwaddr);
+ 	if (err)
+ 		goto drop;
+ 
+@@ -947,7 +950,7 @@ lowpan_process_data(struct sk_buff *skb)
+ 	} else {
+ 		pr_debug("dest: stateless compression\n");
+ 		err = lowpan_uncompress_addr(skb, &hdr.daddr, lowpan_llprefix,
+-				lowpan_unc_llconf[tmp], skb->data);
++				lowpan_unc_llconf[tmp], mac_cb(skb)->da.hwaddr);
+ 		if (err)
+ 			goto drop;
+ 	}
