@@ -70,6 +70,9 @@ Hybrid
   channel from the shell. (The rest of Contiki cares only about the
   long address.)
 
+- remove/disable the printfs in the rf230 driver to get quicker
+  turn-around times. Then test if things still work.
+
 
 atben experiments
 -----------------
