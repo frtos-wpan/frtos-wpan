@@ -1,0 +1,123 @@
+Use of 6LoWPAN
+==============
+
+This describes an experimental setup of one or two Linux nodes and one
+FreeRTOS-Contiki node. We simply exchange pings, which also involves a
+neighbor solicitation/advertisement exchange.
+
+
+Contiki setup
+-------------
+
+Software:
+
+frtos-wpan/freertos commit 6978b8ea65328837ed9966bd76907659a16b9ca9
+frtos-wpan/contiki-outoftree commit 781fa0156528b866ff4c3640b50849241d0bf8ea
+frtos/wpan/contiki commit 1fb1d2a4d826396109d471b447280ea7120db306
+
+Hardware:
+
+Development board:	Olimed STM32-E407
+Adapter board:		ODEV
+802.15.4 radio:		atben
+
+Alternatively, the atben can be placed in the board's uSD slot, in
+which case ODEV is not needed. The FreeRTOS-Contiki hybrid then has
+to be built with the following two options commented out in
+FreeRTOS/Demo/E407/Makefile:
+
+#CFLAGS += -DODEV
+#HAL = hal-spi
+
+
+Linux setup
+-----------
+
+Software:
+
+wpwrak/ben-wpan-linux commit 014d4070aaacdbc4f448fc80f54358420cb54120
+frtos-wpan/frtow-wpan/patches/linux-compression-partial-fix.patch 
+
+The linux-zigbee user-space utilities, see
+http://sourceforge.net/apps/trac/linux-zigbee/wiki/BuildingUserspaceTools
+
+Packages (if using Ubuntu or similar): iproute, iputils-ping
+
+Hardware:
+
+Host:		regular Linux PC
+802.15.4 radio:	atusb
+
+
+Network configuration
+---------------------
+
+IEEE 802.15.4 Channel:	11 (2405 MHz)
+PAN ID:			0xabcd
+16-bit short addresses:	0x8000 + node
+64-bit long addresses:	a0:0:0:0:0:0:0:0 + node
+IPv6 link-local addr.:	fe80::a200:0:0:0 + node
+
+Where the nodes are 1 (Linux PC), 2 (second Linux PC), and 3 (hybrid).
+For example, IEEE 802.15.4 addresses of the first Linux PC are thus
+0x8001 and a0:0:0:0:0:0:0:1, and its IPv6 address is
+fe80::a200:0:0:1
+
+
+Contiki configuration
+---------------------
+
+The network configuration of the Contiki node is hard-coded to the
+settings in FreeRTOS/Demo/E407/Makefile
+
+
+Linux configuration
+-------------------
+
+For the first Linux node:
+
+# iz add wpan-phy0
+# ip link set wpan0 address a0:0:0:0:0:0:0:1	# see below
+# ifconfig wpan0 up
+# iz set wpan0 abcd 8001 11
+# ip link add link wpan0 name lowpan0 type lowpan
+# ip link set lowpan0 address a0:0:0:0:0:0:0:1
+# ip link set lowpan0 up
+
+For the second Linux node:
+
+# iz add wpan-phy0
+# ip link set wpan0 address a0:0:0:0:0:0:0:2	# see below
+# ifconfig wpan0 up
+# iz set wpan0 abcd 8002 11
+# ip link add link wpan0 name lowpan0 type lowpan
+# ip link set lowpan0 address a0:0:0:0:0:0:0:2
+# ip link set lowpan0 up
+
+It's currently not necessary to set the address of the wpan0 interface,
+but not doing so causes incoming packets to be misclassified in the
+kernel, which may cause trouble in the future.
+
+
+Ping from Linux to Hybrid
+-------------------------
+
+% ping6 fe80::a200:0:0:1%lowpan0
+
+The %lowpan0 selects the 6LoWPAN interface and it equivalent to
+
+% ping6 -I lowpan0 fe80::a200:0:0:1
+
+
+Ping from Hybrid to Linux
+-------------------------
+
+This doesn't work yet.
+
+Ping to the first Linux node:
+
+Contiki> ping fe80::a200:0:0:1
+
+Ping to the second Linux node:
+
+Contiki> ping fe80::a200:0:0:2
