@@ -64,6 +64,12 @@ Hybrid
 - consider using more WPAN-specific names for WPAN settings than, say,
   RF_CHANNEL
 
+- find a nicer way than hard-coding to set things like the EUI64, the
+  PAN number, and the channel. Perhaps we can use the STM32Fxxx's U_ID
+  for the long address, hard-code the rest, and allow changing PAN and
+  channel from the shell. (The rest of Contiki cares only about the
+  long address.)
+
 
 atben experiments
 -----------------
