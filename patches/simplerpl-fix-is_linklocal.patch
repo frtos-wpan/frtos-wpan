@@ -1,0 +1,13 @@
+diff --git a/RPL/address.py b/RPL/address.py
+index fcf52d6..fb106e3 100644
+--- a/RPL/address.py
++++ b/RPL/address.py
+@@ -66,6 +66,8 @@ class Address(object):
+     def is_linklocal(self):
+         """Return True if the address is a link-local address (as defined per RFC 4291, Sec. 2.5.6),
+         else return False"""
++	if self.address.startswith("fe80::"):
++		return True
+         return self.address.startswith("\xfe\x80\x00\x00\x00\x00\x00\x00")  # address starts with fe80::/64
+ 
+     def is_RPL_all_nodes(self):

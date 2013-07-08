@@ -1,0 +1,77 @@
+RPL setup
+=========
+
+(work in progress)
+
+Contiki
+-------
+
+Contiki acts as RPL router (non-root) and needs no additional
+configuration.
+
+
+Linux setup
+-----------
+
+We use the experimental RPL implementation by Tony Cheneau.
+
+# apt-get install cython libcap-dev
+% git clone git@github.com:tcheneau/RplIcmp.git
+% cd RplIcmp
+
+If using commit 0a7227ac9903ff70449ac4249d857e6dc0acfc5d, you also
+have to
+
+% patch -p1 -s <../frtos-wpan/patches//rplicmp-fix-shlib-dep.patch
+
+The fix should already be included in later revisions.
+
+% make lib
+# python setup.py install 
+% cd ..
+
+# apt-get install libnl-cli-3-dev
+% git clone git@github.com:tcheneau/Routing.git
+% cd Routing
+% make build-module
+# python setup.py install
+% cd ..
+
+# apt-get install python-zmq
+% git clone git@github.com:tcheneau/simpleRPL.git
+% cd simpleRPL
+
+If using commit e645e69e38dd4e3ccfeceb2db8cba05b7c2e0cd3, you also
+have to
+
+% patch -p1 -s <../frtos-wpan/patches/simplerpl-fix-is_linklocal.patch
+
+A fix may be included in later revisions.
+
+# python setup.py install
+% cd ..
+
+
+Linux configuration
+-------------------
+
+First, we configure the 6LoWPAN interfaces and the link-local address.
+This is identical to the steps described in 6lowpan.txt
+
+# iz add wpan-phy0
+# ip link set wpan0 address a0:0:0:0:0:0:0:1    # optional
+# ifconfig wpan0 up
+# iz set wpan0 abcd 8001 11
+# ip link add link wpan0 name lowpan0 type lowpan
+# ip link set lowpan0 address a0:0:0:0:0:0:0:1
+# ip link set lowpan0 up
+
+To run a RPL root, the node must have a global address. We use the
+example from https://github.com/tcheneau/simpleRPL
+
+# ip addr add 2001:aaaa::0202:0007:0001 dev lowpan0
+
+Last but not least, we start the RPL root router:
+
+# simpleRPL.py -i lowpan0 -vvvvv -R -d 2001:aaaa::0202:0007:0001 \
+  -p 2001:aaaa::
