@@ -80,3 +80,43 @@ N: Si4464
 A: silabs
 A: fsk
 D: http://www.silabs.com/Support%20Documents/TechnicalDocs/Si4464-63-61-60.pdf
+
+# Transmission of IPv6 Packets over IEEE 802.15.4 Networks
+
+N: RFC4944
+A: rfc4944
+A: 6lowpan
+D: http://tools.ietf.org/pdf/rfc4944
+
+# Compression Format for IPv6 Datagrams over IEEE 802.15.4-Based Networks
+
+N: RFC6282
+A: rfc6282
+A: IPHC
+A: iphc
+D: http://tools.ietf.org/pdf/rfc6282
+
+# RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks
+
+N: RFC6550
+A: rfc6550
+A: RPL
+A: rpl
+D: https://tools.ietf.org/pdf/rfc6550
+
+# Objective Function Zero for the Routing Protocol for Low-Power and Lossy
+# Networks (RPL)
+
+N: RFC6552
+A: rfc6552
+A: OF0
+A: of0
+D: https://tools.ietf.org/pdf/rfc6552
+
+# The Minimum Rank with Hysteresis Objective Function
+
+N: RFC6719
+A: rfc6719
+A: ETX
+A: etx
+D: https://tools.ietf.org/pdf/rfc6719
