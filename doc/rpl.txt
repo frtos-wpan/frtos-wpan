@@ -7,13 +7,19 @@ Contiki
 -------
 
 Contiki acts as RPL router (non-root) and needs no additional
-configuration.
+configuration beyond what is hard-coded in FreeRTOS/Demo/E407/Makefile
+
+frtos-wpan/freertos commit a232ac677c4eb7507f8e0c85646a648965e33355
+frtos-wpan/contiki-outoftree commit 9ec5147e0a40d54acbe32481d6aef953b308c58b
 
 
 Linux setup
 -----------
 
 We use the experimental RPL implementation by Tony Cheneau.
+
+apt-get instructions are for a recent Ubuntu. Note that some of the
+packages have only been added some time after "precise" (12.04).
 
 # apt-get install cython libcap-dev
 % git clone git@github.com:tcheneau/RplIcmp.git
@@ -57,6 +63,7 @@ Linux configuration
 
 First, we configure the 6LoWPAN interfaces and the link-local address.
 This is identical to the steps described in 6lowpan.txt
+Please also make sure your kernel has the patches described there.
 
 # iz add wpan-phy0
 # ip link set wpan0 address a0:0:0:0:0:0:0:1    # optional
