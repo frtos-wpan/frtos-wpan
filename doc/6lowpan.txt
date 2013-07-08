@@ -35,8 +35,8 @@ Linux setup
 
 Software:
 
-wpwrak/ben-wpan-linux commit 014d4070aaacdbc4f448fc80f54358420cb54120
-frtos-wpan/frtow-wpan/patches/linux-compression-partial-fix.patch 
+A kernel tree with some drivers and fixes that are not yet in mainline:
+wpwrak/ben-wpan-linux commit 4b634d5591104354b15cbc6503cddde33961b4db
 
 The linux-zigbee user-space utilities, see
 http://sourceforge.net/apps/trac/linux-zigbee/wiki/BuildingUserspaceTools
@@ -112,8 +112,6 @@ The %lowpan0 selects the 6LoWPAN interface and it equivalent to
 Ping from Hybrid to Linux
 -------------------------
 
-This doesn't work yet.
-
 Ping to the first Linux node:
 
 Contiki> ping fe80::a200:0:0:1
@@ -121,3 +119,7 @@ Contiki> ping fe80::a200:0:0:1
 Ping to the second Linux node:
 
 Contiki> ping fe80::a200:0:0:2
+
+Note that Contiki receives the response but does nothing with it.
+There is no feedback on the serial console to indicate whether the
+ping succeeded or not.

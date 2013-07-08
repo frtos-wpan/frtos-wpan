@@ -87,5 +87,3 @@ Linux
 - RFC6282 header compression is badly broken in Linux. A partial fix
   is in patches/linux-compression-partial-fix.patch
   Find out what happened there, complete patch, and submit upstream.
-
-- find out why ping from Hybrid to Linux isn't answered
