@@ -12,7 +12,11 @@ Contiki setup
 Software:
 
 frtos-wpan/freertos commit 6978b8ea65328837ed9966bd76907659a16b9ca9
+to commit 240e68c52705a1d9e9081de7f19613d474ac1a7b
+
 frtos-wpan/contiki-outoftree commit 781fa0156528b866ff4c3640b50849241d0bf8ea
+to commit ab7b053311d88812acf6e8064e60d594b6fecefb
+
 frtos/wpan/contiki commit 1fb1d2a4d826396109d471b447280ea7120db306
 
 Hardware:
@@ -102,11 +106,11 @@ kernel, which may cause trouble in the future.
 Ping from Linux to Hybrid
 -------------------------
 
-% ping6 fe80::a200:0:0:1%lowpan0
+% ping6 fe80::a200:0:0:3%lowpan0
 
 The %lowpan0 selects the 6LoWPAN interface and it equivalent to
 
-% ping6 -I lowpan0 fe80::a200:0:0:1
+% ping6 -I lowpan0 fe80::a200:0:0:3
 
 
 Ping from Hybrid to Linux
