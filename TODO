@@ -30,9 +30,15 @@ Contiki, general
 
 - submit verbosity control to Contiki mainline
 
+  Submitted for consideration to mailing list.
+
 - submit SLP_TR after frame write fix (rf230bb.c) to Contiki mainline
 
-  Created pull request.
+  Created pull request. Resolved as feature, not bug.
+  https://github.com/contiki-os/contiki/pull/295
+
+  Submitted extended comment instead.
+  https://github.com/contiki-os/contiki/pull/296
 
 
 Hybrid
