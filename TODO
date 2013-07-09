@@ -32,6 +32,8 @@ Contiki, general
 
 - submit SLP_TR after frame write fix (rf230bb.c) to Contiki mainline
 
+  Created pull request.
+
 
 Hybrid
 ------
@@ -87,3 +89,8 @@ Linux
 - RFC6282 header compression is badly broken in Linux. A partial fix
   is in patches/linux-compression-partial-fix.patch
   Find out what happened there, complete patch, and submit upstream.
+
+  Additional fix: wpwrak/ben-wpan-linux commit
+  4b634d5591104354b15cbc6503cddde33961b4db
+
+- simpleRPL has a few pending fixes, see doc/rpl.txt
