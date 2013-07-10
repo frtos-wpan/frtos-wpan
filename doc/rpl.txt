@@ -74,3 +74,14 @@ Last but not least, we start the RPL root router:
 
 # simpleRPL.py -i lowpan0 -vvvvv -R -d 2001:aaaa::0202:0007:0001 \
   -p 2001:aaaa::
+
+We can now ping Contiki from the RPL root under Linux:
+
+% ping6 -s 20 2001:aaaa::a200:0:0:3
+
+The -s 20 is to avoid fragmentation, which could cause the Linux side
+to lose frames. (This is a separate issue.)
+
+Ping the Linux host from Contiki:
+
+Contiki> ping 2001:aaaa::202:7:1
