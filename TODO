@@ -100,3 +100,23 @@ Linux
   4b634d5591104354b15cbc6503cddde33961b4db
 
 - simpleRPL has a few pending fixes, see doc/rpl.txt
+
+- simpleRPL seems to ignore Contiki's DDOAG Information Solicitation,
+  so we have to wait until the root sends out a DDOAG Information
+  Object before things get rolling
+
+  (It actually doesn't even seem to receive the DIS)
+
+
+RPL
+---
+
+- when pinging Contiki from Linux, Linux sends a Neighbor Solicitation
+  for fe80::a200:0:0:3 from 2001:aaaa::202:7:1 (a0:00:00:00:00:00:00:01)
+  Contiki prepares a Neighbor Advertisement but then doesn't find a
+  route to 2001:aaaa::202:7:1
+
+  Interestingly, once RPL is up, a  ping 2001:aaaa::202:7:1  from the
+  hybrid works without trouble. In this case, uIP picks the default
+  route fe80::a200:0:0:1 and thus avoids looking for a
+  2001:aaaa::202:7:1 neighbour.
