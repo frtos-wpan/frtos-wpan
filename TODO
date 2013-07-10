@@ -101,8 +101,17 @@ Linux
 
 - simpleRPL has a few pending fixes, see doc/rpl.txt
 
-- simpleRPL seems to ignore Contiki's DDOAG Information Solicitation,
-  so we have to wait until the root sends out a DDOAG Information
-  Object before things get rolling
+- simpleRPL never sees the DODAG Information Solicitation (DIS)
+  Contiki's RPL sents a few seconds after booting. This slows down
+  RPL setup.
 
-  (It actually doesn't even seem to receive the DIS)
+  The reason is that DIS is an unusually short ICMPv6 message, shorter
+  than net/ipv6/raw.c:icmpv6_filter expects to be valid. icmpv6_filter
+  tries to pull eight bytes of ICMPv6 header while the a DIS has only
+  6 bytes.
+
+  This causes the ICMPv6 message to be discarded inside the kernel,
+  so it never gets propagated to simpleRPL's raw socket.
+
+  A tentative fix can be found in
+  https://github.com/wpwrak/ben-wpan-linux/commit/2532be747cc973b1a36f80bc773c6784ae9b0ffe 
