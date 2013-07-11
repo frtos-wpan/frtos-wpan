@@ -24,6 +24,12 @@ FreeRTOS, general
 
 - populate hooks (some marked with @@@)
 
+- move Makefile.stm32 and anything applicable to all STM32 to
+  ../Common.stm32/ or similar
+
+- remove items specific to STM demo builder from Makefile.stm32,
+  keep things from CMSIS
+
 
 Contiki, general
 ----------------
