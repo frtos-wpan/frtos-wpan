@@ -18,7 +18,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "3 jul 2013"
+Date "11 jul 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -123,7 +123,7 @@ F 1 "PMOSFET-GSD" H 1850 3800 60  0000 C CNN
 F 2 "" H 2200 4100 60  0000 C CNN
 F 3 "" H 2200 4100 60  0000 C CNN
 	1    2200 4100
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Notes 3000 800  0    60   ~ 0
 TOP
