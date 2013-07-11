@@ -1,0 +1,52 @@
+Cmp-Mod V01 Created by CvPcb (2013-05-14 BZR 4150)-testing date = Thu Jul 11 01:43:29 2013
+
+BeginCmp
+TimeStamp = /51DE3487;
+Reference = CON1;
+ValeurCmp = CONN_2;
+IdModule  = HDR-2x1-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE31DB;
+Reference = CON2;
+ValeurCmp = CONN_9X2;
+IdModule  = HDR-9x2-100mil;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE31EF;
+Reference = CON3;
+ValeurCmp = MEMCARD8-SHIELD4-SW;
+IdModule  = 8:10-SOCKET-RA-PUSH-PULL;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE35FC;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE352C;
+Reference = Q1;
+ValeurCmp = PMOSFET-GSD;
+IdModule  = SOT-523;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE35ED;
+Reference = R1;
+ValeurCmp = 270;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51DE37A6;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = 0603;
+EndCmp
+
+EndListe
