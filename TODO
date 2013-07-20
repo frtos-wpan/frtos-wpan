@@ -67,13 +67,10 @@ Hybrid
 
   Tentative solution: keep it simple and pass them directly.
 
-- we fail portASSERT_IF_INTERRUPT_PRIORITY_INVALID in
-  FreeRTOS/Source/tasks.c:xTaskGetTickCountFromISR
-
-  Work-around for now: disable the check.
-  
 - move frame retrieval out of interrupt handler; downgrade critical
   section handling to less drastic mechanism than currently used
+  (note: at least transmission must disable long-running interrupts
+  because we race against the transceiver)
 
 - consider using more WPAN-specific names for WPAN settings than, say,
   RF_CHANNEL
