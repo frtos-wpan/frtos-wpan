@@ -25,13 +25,6 @@ packages have only been added some time after "precise" (12.04).
 % git clone git@github.com:tcheneau/RplIcmp.git
 % cd RplIcmp
 
-If using commit 0a7227ac9903ff70449ac4249d857e6dc0acfc5d, you also
-have to
-
-% patch -p1 -s <../frtos-wpan/patches//rplicmp-fix-shlib-dep.patch
-
-The fix should already be included in later revisions.
-
 % make lib
 # python setup.py install 
 % cd ..
