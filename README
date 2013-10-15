@@ -62,14 +62,15 @@ Other tools we need (some may already be installed):
 Setting up a FreeRTOS SVN-to-git repository
 -------------------------------------------
 
-Note: skip the "git clone ...freertos.git" step in the next section
-if you do this.
+Note: skip the "git clone ...freertos.git" step in the "Setting up the
+repositories" section if you do this.
 
 @@@ verify this sequence
 
 % mkdir freertos
 % cd freertos
 % git init
+% git svn init -T trunk https://svn.code.sf.net/p/freertos/code
 % git svn fetch
 % git checkout -b master
 % git merge --ff-only trunk
