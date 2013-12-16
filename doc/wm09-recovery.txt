@@ -1,0 +1,88 @@
+USI WM-N-BM-09 EVB recovery
+===========================
+
+When flashing a sufficiently broken image to the STM32F2xx on the WM09
+board, the chip can become sufficiently catatonic that one may suspect
+a permanent hardware failure. Fortunately, this is not necessarily the
+case.
+
+An example scenario would be trying to use an image for the Olimex
+STM32-E407 (STM32F407) on the USI WM-N-BM-09 (STM32F205).
+
+Symptoms include:
+
+- JTAG TAP initialization works, stm32f2xxx.cpu and stm32f2xxx.bs are
+  found,
+
+- the usual firmware flash sequence fails with
+
+  ...
+  Info : AP INIT COMPLETE
+  Info : Halt timed out, wake up GDB.
+  Error: timed out while waiting for target halted
+  TARGET: stm32f2xxx.cpu - Not halted
+
+- a quick and dirty attempt to restrore sanity by bulk erasing fails with
+
+  > stm32f2x mass_erase 0
+  device id = 0x00000000
+  Cannot identify target as a STM32 family.
+  auto_probe failed
+
+- registers that cannot be zero will read as zero, for example,
+
+  > stm32f2xxx.cpu mdw 0xE0042000
+  0xe0042000 00000000                            ....
+
+  The correct result would be:
+
+  0xe0042000 20036411                            .d.             
+
+- manual reset (pressing SW1) does not help,
+
+- power cycling (unplug and re-plug USB) does not help either.
+
+And so on. Finally, a solution was found that involves combining manual
+reset and power-cycling:
+
+- press and hold SW1,
+
+- cycle USB power,
+
+- run OpenOCD with
+
+  WICED=/here/ever/wiced
+  $WICED/Tools/OpenOCD/Linux64/openocd-all-brcm-libftdi \
+    -f $WICED/Tools/OpenOCD/BCM9WCD1EVAL1.cfg \
+    -f $WICED/Tools/OpenOCD/stm32f2x.cfg
+
+- connect to OpenOCD with
+
+  % telnet localhost 4444
+
+- command a reset with
+
+  > reset halt
+  ... command waits for halt ...
+
+- while OpenOCD is waiting for the CPU core to halt, release SW1.
+  The OpenOCD session should now show something like this:
+
+  target state: halted
+  target halted due to debug-request, current mode: Thread 
+  xPSR: 0x01000000 pc: 0x080109dc msp: 0x20020000
+
+- perform a bulk erase with
+
+  > stm32f2x mass_erase 0
+
+There may be timing dependencies in the process, so it may take a few
+tries.
+
+After that, OpenOCD can be terminated and the normal flash procedure
+will work again.
+
+
+With special thanks to the good folks on ##stm32 on irc.freenode.net,
+especially, in order of appearance, PaulFertser, jpa, GargantuaSauce_,
+and englishman.
